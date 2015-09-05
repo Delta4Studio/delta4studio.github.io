@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name='viewport' content="width=device-width; content='width = 320; initial-scale=1.0; maximum-scale=1.0; user-scalable=yes; target-densitydpi=160dpi'">
+
+  <title>Delta 4 Studio</title>
+  
+  <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script><style type="text/css"></style><style type="text/css"></style>
+  <link rel="shortcut icon" href="img/icon.png">
+  <style type="text/css">
+body {
+    font-family: "Century Gothic", "Segoe UI",Arial, "Microsoft YaHei",Sans-Serif;
+    background:url(img/bg-text.png) no-repeat 50% 50% fixed,
+               url(img/bg.png) repeat 50% 50%;
+}
+.logo {
+    width:100%;
+    height:100%;
+    background:url(img/logo.png) no-repeat 50% 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    background-size: 30%;
+}
+div#navwhite {
+    height:63px;
+    top:100px;
+    left: 2.5%;
+    width: 90%; 
+    right: 2.5%;
+    text-align:center;
+
+    margin: 0px;
+    position: absolute;
+    z-index: 10;
+}
+nav {
+    white-space: nowrap;
+    overflow:hidden;
+    padding:20px 10px;
+    border-radius: 60% / 14px;
+    width: 100%;
+    box-shadow: 0px 0px 20px #aaa ; 
+    background-image: -webkit-gradient(linear, 100% 0, 0 0, from(#E9E9E9), color-stop(0.5, white), to(#E9E9E9));
+    background-image: -webkit-linear-gradient(to right, #E9E9E9, white, #E9E9E9);
+    background-image: -moz-linear-gradient(to right, #E9E9E9, white, #E9E9E9);
+    background-image: -o-linear-gradient(to right, #E9E9E9, white, #E9E9E9);
+    background-image: linear-gradient(to right, #E9E9E9, white, #E9E9E9); 
+    text-align:center;
+    transition: all 0.2s ease;
+    position: fixed;
+    right: 0px;
+    left: 0px;
+
+}
+nav > span {
+    text-transform:uppercase;
+    padding:3% 2%;
+    font-size:100%;
+    transition:all .5s ease;
+    cursor:pointer;
+}
+nav > span:hover {
+    background:rgba(0,0,0,.5);
+    color:white;
+}
+nav.fixed {
+    top: -15px !important;
+}
+article {
+    margin:50px;
+}
+article > h1 {
+    text-transform:uppercase;
+    width:100%;
+    border-bottom:1px dotted #525252;
+}
+article > p {
+    margin:0 0 0 40px;
+}
+div#main {
+  position: absolute;
+}
+  </style>
+  
+
+
+<script type="text/javascript">//<![CDATA[ 
+var windowHeight = $(window).height();  
+var navoffset;
+
+function setTop(){
+    windowHeight = $(window).height();
+    $('div#navwhite').css('top', windowHeight-60 );
+    $('div#main').css('top', windowHeight );
+    $("nav").css('top', windowHeight-38+ 'px');
+    navoffset = $('div#navwhite').offset().top+11;
+};
+
+$(window).load(function(){
+
+
+
+    setTop();
+    $( window ).resize(function() {
+        setTop();
+    });
+    $('nav > span').on('click',function(){
+        var target = $(this).text();
+        $('html,body').animate({ scrollTop : $('#' + target).offset().top-60 }, 1000);
+    });
+     $( window ).scroll(function() {
+        var scrolltop = $(this).scrollTop();
+        var blurValue = scrolltop / 60;
+        if(scrolltop >= navoffset){
+            $('nav').addClass('fixed');
+        }else{
+            $('nav').removeClass('fixed');
+            $(".logo").css({
+                            'filter'        : 'blur('+blurValue+'px)',
+                            '-webkit-filter': 'blur('+blurValue+'px)',
+                            '-moz-filter'   : 'blur('+blurValue+'px)',
+                            '-o-filter'     : 'blur('+blurValue+'px)',
+                            '-ms-filter'    : 'blur('+blurValue+'px)'
+                        });
+            $("nav").css('top', windowHeight-38-scrolltop + 'px');
+        }
+     });
+
+});//]]>  
+
+</script>
+
+
+</head>
+<body>
+<div class='logo'></div>
+<div id='navwhite'>
+<nav>
+    <span>intro</span>
+    <span>member</span>
+    <span>product</span>
+    <span>contact</span>
+</nav>
+</div>
+<div id="main">
+<article id='intro'>
+  <h1>Intro</h1>
+  <p>此為個人工作室，常於影片製作、網頁設計、Plugin撰寫、程式編寫、圖片處理及文學創作。而由於個人關係，僅有周六有處理事件能力。因此若有各種不同問題，請各位能多多見諒。</p>
+</article>
+<article id='member'>
+  <h1>member</h1>
+    <p>K君Y氏 / 統籌所有規劃、設計、編寫以及校稿校正等問題</p>
+</article>
+<article id='product'>
+  <h1>product</h1>
+    <p></p>
+</article>
+
+
+<article id='contact'>
+  <h1>contact</h1>
+    <p></p>
+</article>
+</div>
+
+
+
+
+</body></html>

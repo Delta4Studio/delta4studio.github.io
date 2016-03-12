@@ -10,10 +10,10 @@ $(window).load(function(){
         location.reload();
     });
     $("#navList li:eq(1)").bind('click', function(){
-        $("#content").load("member.html");
+        $("#banner").load("member.html");
     });
     $("#navList li:eq(2)").bind('click', function(){
-        $("#content").load("work.html");
+        $("#content").load("member.html");
     });
     $("#navList li:eq(3)").bind('click', function(){
         $("#content").load("comment.html");

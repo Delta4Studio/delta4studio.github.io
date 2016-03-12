@@ -2,7 +2,7 @@
 
 $(window).load(function(){
     $("#navControlButton").bind('click', function(){
-        var tmp = $("#navBar").css("left") == 0 ? -260 : 0;
+        var tmp = $("#navBar").css("left") == "0px" ? "-260px" : "0px";
         $("#navBar").css("left", tmp);
     });
 

@@ -19,7 +19,7 @@
     -->
     <style type="text/css">
       body {font-family: "Century Gothic", "Segoe UI",Arial, "Microsoft YaHei",Sans-Serif; margin:0; background-color: #555;}
-      #navBar {color: white; width:260px; position: absolute; top: -43px;left: -260px;transition: all ease-in 0.5s 0s;z-index: 9;}
+      #navBar {color: white; width:260px; position: fixed; top: -43px;left: -260px;transition: all ease-in 0.5s 0s;z-index: 9;}
       #navList{width: 260px;background-color: rgba(20,20,20,0.8);}
       /* Height 100% */
       html, body, #wapper, #navBar, #navList, #content {height: 100%;}
@@ -124,7 +124,7 @@
 .member {
     width: 400px;
     padding: 50px;
-    float: left;
+    min-height: 300px;
 
     margin-left: calc(50% - 250px);
 }
@@ -141,7 +141,7 @@
 </style>
 
 
-    
+
   </head>
 
   <!-- // BODY // -->

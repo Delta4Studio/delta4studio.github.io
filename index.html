@@ -1,94 +1,167 @@
 <!DOCTYPE html>
-<html><head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta name='viewport' content="width=device-width; content='width = 320; initial-scale=1.0; maximum-scale=1.0; user-scalable=yes; target-densitydpi=160dpi'">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name='viewport' content="width=device-width; content='width = 320; initial-scale=1.0; maximum-scale=1.0; user-scalable=yes; target-densitydpi=160dpi'">
 
-  <title>Delta 4 Studio</title>
-  
-  <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-  <script type="text/javascript" src="js/index.js"></script>
-  <style type="text/css"></style><style type="text/css"></style>
-  <link rel="shortcut icon" href="img/icon.png">
-  <style type="text/css">
-body {
-    font-family: "Century Gothic", "Segoe UI",Arial, "Microsoft YaHei",Sans-Serif;
-    background:url(img/bg-text.png) no-repeat 50% 50% fixed,
-               url(img/bg.png) repeat 50% 50%;
-}
-.logo {
-    width:100%;
-    height:100%;
-    background:url(img/logo.png) no-repeat 50% 50%;
-    position: absolute;
-    top: 0;
-    right: 0;
+    <title>Delta 4 Studio</title>
 
-    background-size: 30%;
-}
-div#navwhite {
-    height:63px;
-    top:100px;
-    left: 2.5%;
-    width: 90%; 
-    right: 2.5%;
-    text-align:center;
+    <script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <style type="text/css"></style><style type="text/css"></style>
+    <link rel="shortcut icon" href="img/icon.png">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
 
-    margin: 0px;
-    position: absolute;
-    z-index: 10;
-}
-nav {
-    white-space: nowrap;
-    overflow:hidden;
-    padding:20px 10px;
-    border-radius: 60% / 14px;
-    width: 100%;
-    box-shadow: 0px 0px 20px #aaa ; 
-    background-image: -webkit-gradient(linear, 100% 0, 0 0, from(#E9E9E9), color-stop(0.5, white), to(#E9E9E9));
-    background-image: -webkit-linear-gradient(to right, #E9E9E9, white, #E9E9E9);
-    background-image: -moz-linear-gradient(to right, #E9E9E9, white, #E9E9E9);
-    background-image: -o-linear-gradient(to right, #E9E9E9, white, #E9E9E9);
-    background-image: linear-gradient(to right, #E9E9E9, white, #E9E9E9); 
-    text-align:center;
-    transition: all 0.2s ease;
-    position: fixed;
-    right: 0px;
-    left: 0px;
+    <!--
+      /_/_/_/_/_/_/_/_/
+         STYLE SHEET
+      /_/_/_/_/_/_/_/_/
+    -->
+    <style type="text/css">
+      body {font-family: "Century Gothic", "Segoe UI",Arial, "Microsoft YaHei",Sans-Serif; margin:0; background-color: #555;}
+      #navBar {color: white; width:260px; position: absolute; top: -43px;left: -260px;transition: all ease-in 0.5s 0s;z-index: 9;}
+      #navList{width: 260px;background-color: rgba(20,20,20,0.8);}
+      /* Height 100% */
+      html, body, #wapper, #navBar, #navList, #content {height: 100%;}
+      /* Width 100% */
+      html, body, #wapper, #content {width: 100%;}
+      /* float */
+      #navBar, #navList {float: left;}
+
+      #navList ul{list-style: none; padding: 0; margin: 0;}
+      #navList li{padding: 20px;transition: all ease-in 0.5s 0s;cursor: pointer;}
+      #navList li:not(:last-child) { border-bottom: 1px solid transparent;
+        border-right: 0px; border-top: 0px; border-left: 0px;
+        -moz-border-image: -moz-linear-gradient(left right, transparent 0%, #FFF 50%, transparent 100%);
+        -webkit-border-image: -webkit-linear-gradient(top left, transparent  0%, #FFF 50%, transparent 100%);
+        border-image: linear-gradient(to right, transparent  0%, #FFF 50%, transparent 100%);
+
+    border-image-slice: 1;}
+      #navList a {color: white; text-decoration: none;}
+      #navList li:hover{
+        text-shadow: 0 0 2px black;
+        background: rgba(255,255,255,0.7); /* For browsers that do not support gradients */
 
 }
-nav > span {
-    text-transform:uppercase;
-    padding:3% 2%;
-    font-size:100%;
-    transition:all .5s ease;
-    cursor:pointer;
-}
-nav > span:hover {
-    background:rgba(0,0,0,.5);
-    color:white;
-}
-nav.fixed {
-    top: -15px !important;
-}
-article {
-    margin:50px;
-}
-article > h1 {
-    text-transform:uppercase;
-    width:100%;
-    border-bottom:1px dotted #525252;
-}
-article > p {
-    margin:0 0 0 40px;
-}
-div#main {
-  position: absolute;
-}
-</style>
+
+      #navList p {text-align: center; text-shadow: 1px 0px 10px azure; font-weight: bolder; font-size: x-large;}
+
+      #navControl {position: relative;right: -50px; top: 50px; float:right;cursor: pointer;}
 
 
-</head>
-<body>
+
+      #content {
+        background-color: white;
+        width: 100%;
+        min-height: 100%;
+        padding: 30px;
+    box-sizing: border-box;
+    text-align: center;
+      }
+      #banner {
+        font-size: xx-large;
+      }
+      footer {
+        width: 100%;
+        background-color: #333;
+        color:white;
+        font-size: xx-small;
+        padding: 30px;
+    box-sizing: border-box;
+      }
+      footer a{color:lightblue; text-decoration: none;}
+      .fr {float:right;}
+      #footerSocial {text-align: center;}
+      #footerSocial * {transition: all ease 0.8s 0s;}
+
+      /* fa - hover */
+      .twitterHoverSet:hover > .fa-twitter-icon-hover{
+        color:#41ABE1;
+      }
+      .facebookHoverSet:hover > .fa-facebook-icon-hover, .emailHoverSet:hover > .fa-facebook-icon-hover{
+        color:#FFF;
+      }
+      .facebookHoverSet:hover > .fa-facebook-bg-hover{
+        color:#3765A3;
+      }
+      .googleplusHoverSet:hover > .fa-google-plus-icon-hover{
+        color:#EFEFEF;
+      }
+      .googleplusHoverSet:hover > .fa-google-plus-bg-hover{
+        color:#DE5245;
+      }
+      .emailHoverSet:hover > .fa-mail-bg-hover{
+        color:#0053A1;
+      }
+    </style>
+  </head>
+
+  <!-- // BODY // -->
+  <body>
+    <!-- // 外圍 // -->
+    <div id="wrapper">
+            <!-- // 選單(OUTTER) // -->
+      <div id="navBar">
+      <!-- // 選單(CONTROL) // -->
+        <div id="navControl">
+        <span id="navControlButton" class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x fa-inverse-b"></i>
+            <i class="fa fa-bars fa-stack-1x"></i>
+          </span>
+        </div>
+        <!-- // 選單(LIST) // -->
+
+        <div id="navList">
+        <p>Delta 4 Studio</p>
+          <ul>
+            <li><i class="fa fa-lg fa-fw fa-home"></i>HOME</li>
+            <li><i class="fa fa-lg fa-fw fa-users"></i>MEMBER</li>
+            <li><i class="fa fa-lg fa-fw fa-code-fork"></i>WORK</li>
+            <li><i class="fa fa-lg fa-fw fa-comment"></i>COMMENT</li>
+          </ul>
+        </div>
+        
+
+      </div>
+
+      <!-- // 內容 // -->
+      <div id="content">
+        <!-- // BANNER // -->
+        <div id="banner">
+          <p style="padding-right: 150px;">Delta</p><p style="font-size: 80pt;">4</p><p style="padding-left: 150px;">Studio</p>
+        </div>
+              <!-- // 頁尾 // -->
+      
+      </div>
+      <footer>
+        <div id="footerSocial">
+          <span class="fa-stack fa-3x facebookHoverSet">
+            <i class="fa fa-circle fa-stack-2x fa-facebook-bg-hover"></i>
+            <i class="fa fa-facebook fa-stack-1x fa-inverse-b fa-facebook-icon-hover"></i>
+          </span>
+          <span class="fa-stack fa-3x googleplusHoverSet">
+            <i class="fa fa-circle fa-stack-2x fa-google-plus-bg-hover"></i>
+            <i class="fa fa-google-plus fa-stack-1x fa-inverse-b fa-google-plus-icon-hover"></i>
+          </span>
+          <span class="fa-stack fa-3x twitterHoverSet">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-twitter fa-stack-1x fa-inverse-b fa-twitter-icon-hover"></i>
+          </span>
+          <span class="fa-stack fa-3x emailHoverSet">
+            <i class="fa fa-circle fa-stack-2x fa-mail-bg-hover"></i>
+            <i class="fa fa-envelope fa-stack-1x fa-inverse-b fa-facebook-icon-hover"></i>
+          </span></div>
+        <div><p>COPYRIGHT © 2015 Delta 4 Studio. <span class="fr">Design by <a href="http://www.delta4studio.tw">Kamira</a>.</span></p></div>
+        
+      </footer>
+
+
+
+    </div>
+
+
+
+<!--
 <div class='logo'></div>
 <div id='navwhite'>
 <nav>
@@ -121,5 +194,5 @@ div#main {
 
 
 
-
+-->
 </body></html>

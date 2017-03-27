@@ -1,0 +1,213 @@
+body {
+    font-family: "Century Gothic", "Segoe UI", Arial, "Microsoft YaHei", Sans-Serif;
+    margin: 0;
+    background-color: #555;
+}
+
+#navBar {
+    color: white;
+    width: 260px;
+    position: fixed;
+    top: -43px;
+    left: -260px;
+    transition: all ease-in 0.5s 0s;
+    z-index: 9;
+}
+
+#navList {
+    width: 260px;
+    background-color: rgba(20, 20, 20, 0.8);
+}
+
+
+/* Height 100% */
+
+html,
+body,
+#wapper,
+#navBar,
+#navList,
+#content {
+    height: 100%;
+}
+
+
+/* Width 100% */
+
+html,
+body,
+#wapper,
+#content {
+    width: 100%;
+}
+
+
+/* float */
+
+#navBar,
+#navList {
+    float: left;
+}
+
+#navList ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#navList li {
+    padding: 20px;
+    transition: all ease-in 0.5s 0s;
+    cursor: pointer;
+}
+
+#navList li:not(:last-child) {
+    border-bottom: 1px solid transparent;
+    border-right: 0px;
+    border-top: 0px;
+    border-left: 0px;
+    -webkit-border-image: -webkit-linear-gradient(left, transparent 0%, #FFF 50%, transparent 100%);
+    -moz-border-image: -moz-linear-gradient(left, transparent 0%, #FFF 50%, transparent 100%);
+    -o-border-image: -o-linear-gradient(left, transparent 0%, #FFF 50%, transparent 100%);
+    border-image: linear-gradient(to right, transparent 0%, #FFF 50%, transparent 100%);
+    border-image-slice: 1;
+}
+
+#navList a {
+    color: white;
+    text-decoration: none;
+}
+
+#navList li:hover {
+    text-shadow: 0 0 2px black;
+    background: rgba(255, 255, 255, 0.7);
+    /* For browsers that do not support gradients */
+}
+
+#navList p {
+    text-align: center;
+    text-shadow: 1px 0px 10px azure;
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+#navControl {
+    position: relative;
+    right: -50px;
+    top: 50px;
+    float: right;
+    cursor: pointer;
+}
+
+#content {
+    background-color: white;
+    width: 100%;
+    min-height: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#banner {
+    font-size: xx-large;
+}
+
+footer {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    font-size: xx-small;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+footer a {
+    color: lightblue;
+    text-decoration: none;
+}
+
+.fr {
+    float: right;
+}
+
+#footerSocial {
+    text-align: center;
+}
+
+#footerSocial * {
+    transition: all ease 0.8s 0s;
+}
+
+
+/* fa - hover */
+
+.twitterHoverSet:hover>.fa-twitter-icon-hover {
+    color: #41ABE1;
+}
+
+.facebookHoverSet:hover>.fa-facebook-icon-hover,
+.emailHoverSet:hover>.fa-facebook-icon-hover {
+    color: #FFF;
+}
+
+.facebookHoverSet:hover>.fa-facebook-bg-hover {
+    color: #3765A3;
+}
+
+.googleplusHoverSet:hover>.fa-google-plus-icon-hover {
+    color: #EFEFEF;
+}
+
+.googleplusHoverSet:hover>.fa-google-plus-bg-hover {
+    color: #DE5245;
+}
+
+.emailHoverSet:hover>.fa-mail-bg-hover {
+    color: #0053A1;
+}
+
+.name {
+    font-size: x-large;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 1px;
+    border-left-width: 0px;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: dashed;
+    border-left-style: none;
+}
+
+.img {
+    float: left;
+    height: 150px;
+    width: 150px;
+    filter: Gray;
+    -webkit-transition: all 1s ease-in-out 0s;
+    -moz-transition: all 1s ease-in-out 0s;
+    -ms-transition: all 1s ease-in-out 0s;
+    -o-transition: all 1s ease-in-out 0s;
+    transition: all 1s ease-in-out 0s;
+    border-radius: 100%;
+    background-size: contain;
+    margin-left: calc(50% - 75px);
+}
+
+.member {
+    width: 400px;
+    padding: 50px;
+    min-height: 300px;
+    margin-left: calc(50% - 250px);
+}
+
+.memberText {
+    width: 400px;
+    padding: 30px;
+    float: left;
+    box-sizing: border-box;
+    margin-left: calc(50% - 200px);
+}
+
+.memberText * {
+    padding: 5px;
+}
